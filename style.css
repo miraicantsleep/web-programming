@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #282a36, #1c1f26);
+  background: #1c1f26;
+  display: flex;
+  justify-content: center;
+  color: white;
+  min-height: 100vh;
+}
+
+.home-logo {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: large;
+  font-weight: 900;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px 50px;
+  align-items: center;
+  background-color: #1c1f26;
+  position: fixed; /* Make the navbar stick to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navigation ul a {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navigation ul a:hover {
+  color: #50fa7b;
+  border-bottom: 2px solid #50fa7b;
+}
+
+.profile-img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 25vh;
+  height: 25vh;
+  margin-top: 10vh;
+  box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.1);
+}
+
+.name {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  display: flex;
+}
+
+.short-desc {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #d8dee9;
+}
+
+.contact {
+  width: 40vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 4.5vh;
+  height: 4.5vh;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+  filter: brightness(1.5);
+}
+
+.wrapper {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+  color: #777;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
+  .profile-img {
+    width: 20vh;
+    height: 20vh;
+  }
+  .contact {
+    width: 100%;
+  }
+  .logo {
+    width: 4vh;
+    height: 4vh;
+  }
+}
+
+.wrapper-left {
+  align-items: left;
+  display: flex;
+  width: 150vh;
+  flex-direction: column;
+  text-align: left;
+  /* debug  with red border*/
+  /* border: 1px solid red; */
+}
+
+.text {
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  color: #d8dee9;
+  font-size: 18px;
+  line-height: 2;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.profile-section,
+.achievement-section,
+.skill-section {
+  padding: 10px;
+  border-radius: 8px;
+
+  /* border: 1px solid red; */
+}
+
+.achievement-section ul {
+  padding-left: 20px;
+}
+
+.achievement {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #d8dee9;
+}
+
+.wrapper-left,
+.wrapper {
+  opacity: 0; /* Start as invisible */
+  transition: opacity 1s ease-in-out; /* Ensure smooth transition */
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-image {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.recipe-gallery,
+.tourist-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.recipe-card,
+.tourist-card {
+  background-color: #1c1f26;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.recipe-card img,
+.tourist-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.recipe-card h3,
+.tourist-card h3 {
+  color: #d8dee9;
+  margin: 10px 0;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.recipe-card p,
+.tourist-card p {
+  color: #d8dee9;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+}
